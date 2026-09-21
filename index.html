@@ -1,0 +1,1111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Deep Neck Spaces Atlas — Retropharyngeal &amp; Parapharyngeal Space</title>
+<meta name="description" content="Interactive anatomy atlas of the retropharyngeal and parapharyngeal spaces: fascia planes, boundaries, contents, spread of infection, imaging and clinical pearls." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0b1013; --bg2:#0f171b; --panel:#121d22; --panel2:#16232a;
+  --ink:#e8f1f2; --ink2:#a7bcc2; --ink3:#78919a;
+  --line:#22333b; --line2:#2d424c;
+  --teal:#3fd0c9; --teal-d:#1b8e8b;
+  --amber:#f5b544; --rose:#ff6b7d; --violet:#a98bff; --lime:#8fd64f;
+  --rps:#ff6b7d; --ppsp:#3fd0c9; --danger:#ff9f4a; --pv:#a98bff;
+  --shadow:0 18px 50px -22px rgba(0,0,0,.8);
+  --maxw:1220px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; background:
+    radial-gradient(1100px 500px at 85% -8%, rgba(63,208,201,.10), transparent 60%),
+    radial-gradient(900px 500px at 5% 5%, rgba(255,107,125,.09), transparent 60%),
+    linear-gradient(180deg,#0b1013,#0b1013 40%,#090d10);
+  color:var(--ink); font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  font-size:16px; line-height:1.6; -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4,.disp{font-family:Fraunces,Georgia,serif; font-weight:600; letter-spacing:-.015em; line-height:1.12}
+h1{font-size:clamp(2.3rem,5.2vw,3.9rem); margin:0 0 .5rem}
+h2{font-size:clamp(1.6rem,3.2vw,2.35rem); margin:0 0 .35rem}
+h3{font-size:1.2rem; margin:0 0 .5rem}
+p{margin:0 0 .9rem}
+a{color:var(--teal); text-decoration-color:rgba(63,208,201,.35)}
+a:hover{text-decoration-color:var(--teal)}
+.wrap{max-width:var(--maxw); margin-inline:auto; padding-inline:clamp(1rem,3vw,2rem)}
+.kicker{font-family:Inter,sans-serif; font-size:.72rem; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:var(--ink3)}
+.lead{font-size:1.075rem; color:var(--ink2); max-width:68ch}
+section{padding:clamp(3rem,7vw,5.5rem) 0 0}
+.sec-head{display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between; gap:1rem; border-bottom:1px solid var(--line); padding-bottom:1rem; margin-bottom:1.8rem}
+.sec-head .n{font-family:Fraunces,serif; font-size:2.6rem; color:var(--line2); line-height:1}
+
+/* nav */
+.nav{position:sticky; top:0; z-index:60; backdrop-filter:blur(12px); background:rgba(11,16,19,.82); border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex; align-items:center; gap:1rem; height:58px}
+.nav .brand{display:flex; align-items:center; gap:.55rem; font-weight:700; letter-spacing:-.01em; white-space:nowrap}
+.nav .dot{width:11px;height:11px;border-radius:50%;background:var(--teal);box-shadow:0 0 0 4px rgba(63,208,201,.14)}
+.nav ul{display:flex; gap:.15rem; list-style:none; margin:0; padding:0; overflow:auto; scrollbar-width:none}
+.nav ul::-webkit-scrollbar{display:none}
+.nav li a{display:block; padding:.4rem .6rem; border-radius:8px; color:var(--ink2); text-decoration:none; font-size:.83rem; font-weight:600; white-space:nowrap}
+.nav li a:hover{background:var(--panel2); color:var(--ink)}
+.nav .cta{margin-left:auto}
+.btn{display:inline-flex; align-items:center; gap:.45rem; border:1px solid var(--line2); background:var(--panel2); color:var(--ink); padding:.45rem .8rem; border-radius:10px; font-size:.83rem; font-weight:600; cursor:pointer; transition:.18s}
+.btn:hover{border-color:var(--teal); color:#fff; transform:translateY(-1px)}
+.btn.p{background:linear-gradient(180deg,var(--teal),var(--teal-d)); border-color:transparent; color:#05201f}
+.btn.p:hover{filter:brightness(1.08)}
+.btn.sm{padding:.28rem .55rem; font-size:.76rem; border-radius:8px}
+.btn.on{border-color:var(--teal); background:rgba(63,208,201,.14); color:#fff}
+
+/* hero */
+.hero{padding-top:clamp(2.2rem,5vw,3.6rem)}
+.grid{display:grid; gap:1rem}
+.g2{grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.g4{grid-template-columns:repeat(auto-fit,minmax(210px,1fr))}
+.card{background:linear-gradient(180deg,var(--panel),#0f1a1f); border:1px solid var(--line); border-radius:16px; padding:1.15rem 1.25rem; box-shadow:var(--shadow); position:relative; overflow:hidden}
+.card.flat{background:var(--panel); box-shadow:none}
+.card .tag{position:absolute; inset:0 auto auto 0; width:100%; height:3px; background:var(--teal); opacity:.9}
+.card.rps .tag{background:var(--rps)} .card.pps .tag{background:var(--ppsp)}
+.card.dg .tag{background:var(--danger)} .card.pv .tag{background:var(--pv)}
+.card h3{display:flex; align-items:center; gap:.5rem; margin-top:.35rem}
+.pill{font-size:.68rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; padding:.2rem .5rem; border-radius:999px; border:1px solid var(--line2); color:var(--ink2)}
+.mono{font-variant-numeric:tabular-nums; font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+.fact{display:flex; gap:.7rem; align-items:baseline; border-top:1px dashed var(--line2); padding:.55rem 0; font-size:.92rem}
+.fact:first-of-type{border-top:0}
+.fact b{color:var(--ink3); font-weight:600; min-width:5.5rem; flex:0 0 auto; font-size:.78rem; letter-spacing:.05em; text-transform:uppercase}
+ul.ticks{list-style:none; margin:.3rem 0 .9rem; padding:0}
+ul.ticks li{position:relative; padding-left:1.5rem; margin-bottom:.45rem}
+ul.ticks li::before{content:""; position:absolute; left:.15rem; top:.62em; width:.55rem; height:.55rem; border-radius:2px; background:var(--teal); transform:rotate(45deg)}
+ul.ticks.rose li::before{background:var(--rose)}
+ul.ticks.amber li::before{background:var(--danger)}
+.small{font-size:.86rem; color:var(--ink3)}
+.note{border-left:3px solid var(--amber); background:rgba(245,181,68,.07); padding:.7rem .9rem; border-radius:0 12px 12px 0; margin:.8rem 0; font-size:.92rem}
+.note.red{border-color:var(--rose); background:rgba(255,107,125,.08)}
+.note.blue{border-color:var(--teal); background:rgba(63,208,201,.07)}
+
+/* figure */
+figure{margin:0}
+.fig{background:linear-gradient(180deg,#0e181c,#0b1215); border:1px solid var(--line); border-radius:18px; padding:.9rem; box-shadow:var(--shadow)}
+.fig .bar{display:flex; flex-wrap:wrap; gap:.4rem; align-items:center; padding:.15rem .25rem .7rem}
+.fig .bar .lab{font-size:.72rem; color:var(--ink3); text-transform:uppercase; letter-spacing:.14em; font-weight:700; margin-right:.35rem}
+.fig .bar .sep{width:1px; height:18px; background:var(--line2); margin:0 .3rem}
+.fig img{width:100%; display:block; border-radius:12px; background:#f7fbfb; cursor:zoom-in}
+figcaption{font-size:.83rem; color:var(--ink3); padding-top:.6rem}
+.hint{font-size:.76rem; color:var(--ink3); font-style:italic}
+
+/* interactive svg regions */
+svg .reg{cursor:pointer; transition:opacity .2s, transform .2s}
+svg .reg:hover{opacity:.85}
+svg text{font-family:Inter,sans-serif; font-size:12px; fill:#0c1418; font-weight:600}
+svg .lbl{fill:var(--ink2); font-weight:600; font-size:11.5px}
+svg .lead-line{stroke:var(--line2); stroke-width:1}
+svg .off{opacity:0; pointer-events:none}
+svg .dim{opacity:.14}
+#styloidG{opacity:0; pointer-events:none; transition:opacity .4s}
+#styloidG.on{opacity:1; pointer-events:auto}
+#axialInfo{border-top:1px solid var(--line); margin-top:.55rem; padding-top:.7rem; min-height:96px}
+#axialInfo h4{font-family:Fraunces,serif; margin:.1rem 0 .3rem; font-size:1.05rem}
+
+/* two-pane */
+.split{display:grid; grid-template-columns:minmax(0,1.45fr) minmax(260px,.85fr); gap:1.1rem; align-items:start}
+@media(max-width:940px){.split{grid-template-columns:1fr}}
+
+/* extent chart */
+.extent{display:grid; grid-template-columns:132px repeat(4,minmax(0,1fr)); gap:0 10px; align-items:stretch}
+.extent .scale{grid-row:1/-1; position:relative; border-right:1px solid var(--line2); padding-right:.55rem; font-size:.7rem; color:var(--ink3)}
+.extent .scale div{position:absolute; right:.55rem; transform:translateY(-50%); white-space:nowrap}
+.extent .scale div::after{content:""; position:absolute; right:-11px; top:50%; width:8px; height:1px; background:var(--line2)}
+.eh{display:flex; flex-direction:column; justify-content:flex-end; min-height:26px}
+.eh b{font-size:.78rem; line-height:1.25}
+.eh span{font-size:.7rem; color:var(--ink3)}
+.track{position:relative; grid-row:2; height:460px; border-left:1px dashed var(--line); border-radius:8px; background:linear-gradient(180deg,rgba(255,255,255,.028),transparent)}
+.bar{position:absolute; left:9%; width:82%; border-radius:10px; transform-origin:top; cursor:pointer; border:1px solid rgba(255,255,255,.22);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.25); transition:.25s; opacity:.94}
+.bar::before{content:attr(data-t); position:absolute; top:6px; left:7px; right:7px; font-size:.7rem; font-weight:700; color:#08171a; line-height:1.25}
+.bar:hover{filter:brightness(1.12)}
+.bar.sel{box-shadow:0 0 0 2px #fff inset; filter:brightness(1.12)}
+.bar.go{animation:grow .9s cubic-bezier(.2,.8,.2,1) both}
+@keyframes grow{from{transform:scaleY(.02); opacity:0}to{transform:scaleY(1); opacity:.94}}
+.contd{position:absolute; bottom:-6px; left:50%; transform:translateX(-50%); font-size:.68rem; color:var(--ink3); white-space:nowrap}
+@media(max-width:820px){.extent{grid-template-columns:78px repeat(2,minmax(0,1fr))}.track{height:380px}}
+
+/* tables */
+.tw{overflow-x:auto; border:1px solid var(--line); border-radius:16px; background:var(--panel)}
+table{border-collapse:collapse; width:100%; font-size:.92rem; min-width:640px}
+th,td{text-align:left; padding:.72rem .85rem; border-bottom:1px solid var(--line); vertical-align:top}
+thead th{background:#0e1a1f; position:sticky; top:58px; font-size:.72rem; letter-spacing:.12em; text-transform:uppercase; color:var(--ink3)}
+tbody tr:hover td{background:rgba(63,208,201,.05)}
+td b,th b{color:var(--ink)}
+td .sub{color:var(--ink3); font-size:.83rem}
+.c-rps{color:var(--rps)} .c-ppsp{color:var(--ppsp)} .c-dg{color:var(--danger)} .c-pv{color:var(--pv)}
+
+/* tabs */
+.tabs{display:flex; gap:.3rem; flex-wrap:wrap; margin-bottom:.9rem}
+.tabp{display:none} .tabp.on{display:block; animation:fade .3s ease both}
+@keyframes fade{from{opacity:0; transform:translateY(4px)}to{opacity:1; transform:none}}
+
+/* gallery */
+.gal{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:.9rem}
+.gal a{display:block; border:1px solid var(--line); border-radius:14px; overflow:hidden; background:#0e181c}
+.gal img{width:100%; height:170px; object-fit:cover; display:block; transition:.35s}
+.gal a:hover img{transform:scale(1.035)}
+.gal .cap{padding:.6rem .7rem .7rem; font-size:.8rem; color:var(--ink2)}
+.lb{position:fixed; inset:0; background:rgba(4,7,9,.9); display:none; align-items:center; justify-content:center; z-index:90; padding:2vmin; cursor:zoom-out}
+.lb.on{display:flex}
+.lb img{max-width:100%; max-height:92vh; border-radius:12px; background:#fff}
+
+/* tree */
+.tree{display:grid; gap:.8rem}
+.node{border:1px solid var(--line2); border-radius:14px; padding:.85rem .95rem; background:var(--panel2); position:relative}
+.node .q{font-weight:600; margin-bottom:.5rem}
+.node .opts{display:grid; grid-template-columns:1fr 1fr; gap:.5rem}
+@media(max-width:700px){.node .opts{grid-template-columns:1fr}}
+.opt{border:1px dashed var(--line2); border-radius:10px; padding:.5rem .6rem; font-size:.86rem; background:#0e1a1f}
+.opt b{display:block; font-size:.74rem; letter-spacing:.08em; text-transform:uppercase; margin-bottom:.2rem}
+.opt.y b{color:var(--teal)} .opt.r b{color:var(--rose)}
+.arrow{height:18px; display:flex; justify-content:center; color:var(--line2)}
+
+/* quiz */
+.q{border:1px solid var(--line); border-radius:14px; padding:1rem 1.05rem; background:var(--panel); margin-bottom:.85rem}
+.q .qt{font-weight:600; margin-bottom:.7rem}
+.q .opts{display:grid; gap:.42rem}
+.q button.o{text-align:left; border:1px solid var(--line2); background:#0d171b; color:var(--ink); padding:.55rem .7rem; border-radius:10px; cursor:pointer; font:inherit; font-size:.9rem; transition:.15s}
+.q button.o:hover{border-color:var(--teal)}
+.q button.o.correct{border-color:var(--lime); background:rgba(143,214,79,.14)}
+.q button.o.wrong{border-color:var(--rose); background:rgba(255,107,125,.12)}
+.q .fb{display:none; margin-top:.6rem; font-size:.88rem; border-left:3px solid var(--teal); padding:.35rem .6rem; background:rgba(63,208,201,.07); border-radius:0 8px 8px 0}
+.q.done .fb{display:block}
+.score{position:sticky; top:66px; z-index:5; display:flex; align-items:center; gap:.8rem; padding:.6rem .85rem; border:1px solid var(--line2); border-radius:999px; background:rgba(15,23,27,.92); backdrop-filter:blur(8px)}
+.score .m{flex:1; height:7px; border-radius:99px; background:#1b2a31; overflow:hidden}
+.score .m i{display:block; height:100%; width:0; background:linear-gradient(90deg,var(--teal),var(--lime)); transition:.4s}
+
+footer{margin-top:clamp(3rem,6vw,5rem); border-top:1px solid var(--line); padding:1.6rem 0 3rem; color:var(--ink3); font-size:.85rem}
+.hr{height:1px; background:linear-gradient(90deg,transparent,var(--line2),transparent); margin:1.6rem 0}
+.kbd{border:1px solid var(--line2); border-bottom-width:2px; border-radius:6px; padding:.02rem .35rem; font-size:.76rem; background:#0e1a1f}
+@media print{
+  body{background:#fff; color:#000} .nav,.fig .bar,.score,footer .btn{display:none}
+  .card,.fig{box-shadow:none; background:#fff; border-color:#bbb}
+  :root{--ink:#000;--ink2:#222;--ink3:#555;--panel:#fff;--panel2:#fff;--line:#ccc;--line2:#aaa}
+  section{page-break-inside:avoid}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <div class="brand"><span class="dot"></span>Deep&nbsp;Neck&nbsp;Atlas</div>
+    <ul>
+      <li><a href="#model">Mental model</a></li>
+      <li><a href="#axial">Axial slice</a></li>
+      <li><a href="#extent">Extent &amp; spread</a></li>
+      <li><a href="#boundaries">Boundaries</a></li>
+      <li><a href="#content">Contents &amp; differentials</a></li>
+      <li><a href="#clinical">Clinical</a></li>
+      <li><a href="#imaging">Imaging</a></li>
+      <li><a href="#compare">Compare</a></li>
+      <li><a href="#gallery">Plates</a></li>
+      <li><a href="#quiz">Quiz</a></li>
+    </ul>
+    <div class="cta"><button class="btn sm" onclick="window.print()">Print / PDF</button></div>
+  </div>
+</nav>
+
+<header class="wrap hero">
+  <div class="grid hero-grid" id="herogrid">
+    <div>
+      <div class="kicker">Head &amp; neck surgical anatomy · interactive plate</div>
+      <h1>Retropharyngeal &amp;<br>Parapharyngeal Space</h1>
+      <p class="lead">Two potential spaces on either side of the pharynx, separated by a few millimetres of fascia — and yet one drains into the mediastinum while the other is the highway for salivary and neural tumours. This page maps both: fascial layers in cross-section, vertical extent, contents, and what goes wrong.</p>
+      <div style="display:flex; gap:.5rem; flex-wrap:wrap; margin-top:1rem">
+        <a class="btn p" href="#model">Start with the mental model →</a>
+        <a class="btn" href="#quiz">Jump to self-test</a>
+        <span class="hint" style="align-self:center">Schematics are simplified for teaching, not to scale.</span>
+      </div>
+    </div>
+    <div class="grid" style="gap:.7rem">
+      <div class="card rps"><span class="tag"></span>
+        <div class="kicker">Medial · posterior</div>
+        <h3>Retropharyngeal space</h3>
+        <div class="fact"><b>Between</b><span>buccopharyngeal &amp; alar fascia</span></div>
+        <div class="fact"><b>From</b><span>skull base</span></div>
+        <div class="fact"><b>To</b><span>T1–T2 (alar fuses)</span></div>
+        <div class="fact"><b>Killer</b><span>→ danger space → mediastinitis</span></div>
+      </div>
+      <div class="card pps"><span class="tag"></span>
+        <div class="kicker">Lateral · paired</div>
+        <h3>Parapharyngeal space</h3>
+        <div class="fact"><b>Shape</b><span>inverted fat pyramid</span></div>
+        <div class="fact"><b>Base</b><span>skull base</span></div>
+        <div class="fact"><b>Apex</b><span>hyoid bone</span></div>
+        <div class="fact"><b>Killer</b><span>tumours: parotid deep lobe → nerves</span></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+<!-- ============ MENTAL MODEL ============ -->
+<section id="model">
+  <div class="sec-head">
+    <div><div class="kicker">01 · Orientation</div><h2>The 60-second mental model</h2></div>
+    <span class="pill">3D in one sentence</span>
+  </div>
+  <div class="grid g3">
+    <div class="card flat"><span class="tag" style="background:var(--teal)"></span>
+      <h3><span class="pill">1</span> Wrap, then stack</h3>
+      <p>The pharynx is a muscular tube wrapped by the <b>buccopharyngeal fascia</b>. Directly behind it lies a thin loose connective-tissue plane — the <b>retropharyngeal space (RPS)</b>. Behind that is the <b>alar fascia</b>, then the <b>danger space</b>, then <b>prevertebral fascia</b> draped over longus colli and the vertebral bodies.</p>
+      <p class="small">So from airway lumen going <em>back</em>: mucosa → constrictor → buccopharyngeal → <span class="c-rps"><b>RPS</b></span> → alar → <span class="c-dg"><b>danger space</b></span> → prevertebral → muscle → bone.</p>
+    </div>
+    <div class="card flat"><span class="tag" style="background:var(--ppsp)"></span>
+      <h3><span class="pill">2</span> Then go lateral</h3>
+      <p>Move <b>side-wards</b> from the pharyngeal wall and you enter the <b>parapharyngeal space (PPS)</b> — a fat-filled inverted pyramid, one on each side, base on the skull base, apex down at the hyoid. Its <b>medial wall is the pharynx itself</b>, so anything expanding in it pushes the tonsil and lateral pharyngeal wall inward.</p>
+      <p class="small">Think: RPS = the space <em>behind</em> the pharynx; PPS = the space <em>beside</em> the pharynx. Both communicate freely with each other and with the carotid sheath.</p>
+    </div>
+    <div class="card flat"><span class="tag" style="background:var(--danger)"></span>
+      <h3><span class="pill">3</span> Gravity is the plot</h3>
+      <p>Fascial planes are <b>downward-conducting tubes</b>. Infection does not respect the level of the pharynx — it follows the path of least resistance into the neck and chest. That is why a sore throat, a fish bone, or an infected molar becomes mediastinitis.</p>
+      <ul class="ticks amber" style="margin-bottom:0">
+        <li>RPS → stops at T2… <b>unless</b> it ruptures through the alar fascia into the danger space.</li>
+        <li>Danger space → clear, midline, no lymphatics → runs the whole way to the diaphragm.</li>
+        <li>PPS → carotid sheath → mediastinum, or down to the submandibular space / up to the infratemporal fossa and orbit.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="hr"></div>
+
+  <div class="split">
+    <figure>
+      <div class="fig">
+        <div class="bar">
+          <span class="lab">Fascial sandwich · coronal schematic</span>
+          <span class="sep"></span>
+          <span class="hint">hover / tap a band →</span>
+        </div>
+        <svg viewBox="0 0 860 340" role="img" aria-label="Coronal schematic of the pharynx with its posterior fascial layers">
+          <defs>
+            <linearGradient id="gm" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c9566a"/><stop offset="1" stop-color="#8e3546"/></linearGradient>
+          </defs>
+          <!-- background body -->
+          <rect x="10" y="18" width="840" height="300" rx="14" fill="#101c21"/>
+          <!-- skull base -->
+          <path d="M10 40 Q430 -14 850 40 L850 18 L10 18Z" fill="#e9e2cf" opacity=".85"/>
+          <text x="30" y="34" class="lbl" style="fill:#0c1418;font-size:11px">skull base (basiocciput / petrous apex)</text>
+          <!-- vertebral column -->
+          <g fill="#efe8d6" stroke="#9c9madd" stroke-width="0">
+            <g id="vts"></g>
+          </g>
+          <!-- posterior pharyngeal wall / constrictors, midline -->
+          <g class="reg" data-key="wall">
+            <path d="M300 60 Q430 46 560 60 L560 268 Q430 284 300 268Z" fill="url(#gm)"/>
+            <path d="M330 60 Q430 50 530 60 L530 268 Q430 276 330 268Z" fill="#3b1a22" opacity=".55"/>
+          </g>
+          <text x="430" y="170" text-anchor="middle" class="lbl" style="fill:#fff;font-size:12px">posterior pharyngeal wall</text>
+          <text x="430" y="188" text-anchor="middle" class="lbl" style="fill:#ffb9c4;font-size:10.5px">superior / middle constrictor + buccopharyngeal fascia</text>
+          <!-- paired RPS bands -->
+          <g class="reg" data-key="rps">
+            <path d="M246 58 Q266 56 286 58 L286 250 Q266 268 246 250Z" fill="#ff6b7d"/>
+            <path d="M574 58 Q594 56 614 58 L614 250 Q594 268 574 250Z" fill="#ff6b7d"/>
+          </g>
+          <g class="reg" data-key="alar">
+            <rect x="238" y="58" width="6" height="192" rx="3" fill="#ffe3a3"/>
+            <rect x="616" y="58" width="6" height="192" rx="3" fill="#ffe3a3"/>
+          </g>
+          <g class="reg" data-key="danger">
+            <path d="M206 58 L236 58 L236 258 Q221 268 206 258Z" fill="#ff9f4a"/>
+            <path d="M624 58 L654 58 L654 258 Q639 268 624 258Z" fill="#ff9f4a"/>
+          </g>
+          <g class="reg" data-key="prevertebral">
+            <rect x="197" y="58" width="7" height="248" rx="3" fill="#a98bff"/>
+            <rect x="656" y="58" width="7" height="248" rx="3" fill="#a98bff"/>
+          </g>
+          <g class="reg" data-key="longus">
+            <rect x="158" y="66" width="37" height="230" rx="8" fill="#b1543f" opacity=".9"/>
+            <rect x="665" y="66" width="37" height="230" rx="8" fill="#b1543f" opacity=".9"/>
+          </g>
+          <!-- PPS lateral fat triangles -->
+          <g class="reg" data-key="pps">
+            <path d="M60 70 L148 70 L148 196 L96 240 L60 150Z" fill="#f4e08a"/>
+            <path d="M800 70 L712 70 L712 196 L764 240 L800 150Z" fill="#f4e08a"/>
+            <path d="M18 60 L52 60 L52 250 L18 210Z" fill="#8a5a3c"/>
+            <path d="M842 60 L808 60 L808 250 L842 210Z" fill="#8a5a3c"/>
+          </g>
+          <!-- T2 fusion marker -->
+          <path d="M246 250 Q430 300 614 250" fill="none" stroke="#fff" stroke-width="1.6" stroke-dasharray="5 4"/>
+          <text x="430" y="308" text-anchor="middle" class="lbl" style="font-size:11px;fill:#ff8b9a">alar fascia fuses with buccopharyngeal fascia ≈ T1–T2 → true RPS ends here</text>
+          <g stroke="var(--line2)" stroke-width="1" fill="none">
+            <path d="M148 130 L104 130"/><path d="M206 96 L170 96"/>
+          </g>
+          <text x="60" y="126" class="lbl">PPS fat</text>
+          <text x="60" y="272" class="lbl" style="fill:#f5b544">medial pterygoid / masticator →</text>
+        </svg>
+        <figcaption><b>Reading the sandwich.</b> The thin yellow line (<b>alar fascia</b>) is the surgical border between a contained retropharyngeal collection and the free-falling <b>danger space</b>. Note the midline <b>raphe</b>: in young children it splits the RPS into two lateral compartments, so paediatric abscesses are classically paramedian/unilateral; it atrophies by ~4–5 years, so adults get broad midline collections. The PPS sits lateral to all of this (yellow).</figcaption>
+      </div>
+    </figure>
+    <div class="grid" style="gap:.7rem">
+      <div class="card"><span class="tag" style="background:var(--lime)"></span>
+        <h3>Layers you must name in order</h3>
+        <div class="fact"><b>1</b><span>Pharyngeal mucosa</span></div>
+        <div class="fact"><b>2</b><span>Submucosa + lymphoid ring</span></div>
+        <div class="fact"><b>3</b><span>Constrictor muscle ± longitudinal layer</span></div>
+        <div class="fact"><b>4</b><span><b>Buccopharyngeal fascia</b></span></div>
+        <div class="fact"><b>5</b><span class="c-rps"><b>Retropharyngeal space</b></span> (alar fuses with D at T1–T2)</div>
+        <div class="fact"><b>6</b><span><b>Alar fascia</b> — thin split off prevertebral</span></div>
+        <div class="fact"><b>7</b><span class="c-dg"><b>Danger space</b> (space 4 of Grodinsky)</span></div>
+        <div class="fact"><b>8</b><span><b>Prevertebral fascia</b> → longus colli → bone</span></div>
+      </div>
+      <div class="note blue" style="margin:0">
+        <b>Why it is called “danger”.</b> Grodinsky &amp; Holyoke (1938) showed this interalar/prevertebral plane is a loose, avascular, midline sheath open from the skull base to the diaphragm — the fastest route to <b>descending necrotizing mediastinitis</b> (mortality 40–50 % if drainage is delayed).
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ AXIAL ============ -->
+<section id="axial">
+  <div class="sec-head">
+    <div><div class="kicker">02 · Cross-section</div><h2>Axial slice at the level of the oropharynx</h2></div>
+    <span class="pill">click any structure</span>
+  </div>
+  <div class="split">
+    <div class="fig">
+      <div class="bar">
+        <span class="lab">Layers</span>
+        <button class="btn sm on" data-layer="spaces" onclick="toggleLayer(this)">Spaces</button>
+        <button class="btn sm on" data-layer="fascia" onclick="toggleLayer(this)">Fascia</button>
+        <button class="btn sm on" data-layer="vessels" onclick="toggleLayer(this)">Vessels &amp; nerves</button>
+        <button class="btn sm on" data-layer="muscle" onclick="toggleLayer(this)">Muscle / bone</button>
+        <button class="btn sm on" data-layer="labels" onclick="toggleLayer(this)">Labels</button>
+        <span class="sep"></span>
+        <button class="btn sm" onclick="flipStyloid(this)" id="styBtn">Show styloid partition</button>
+      </div>
+      <svg id="axsvg" viewBox="0 0 760 620" role="img" aria-label="Interactive axial schematic of the neck at oropharynx level">
+        <!-- neck outline -->
+        <path d="M380 34 C560 34 690 140 690 300 C690 470 560 590 380 590 C200 590 70 470 70 300 C70 140 200 34 380 34Z" fill="#14232a" stroke="#2d424c"/>
+        <text x="380" y="24" text-anchor="middle" class="lbl">anterior</text>
+        <text x="380" y="612" text-anchor="middle" class="lbl">posterior</text>
+        <text x="26" y="315" class="lbl">R</text><text x="726" y="315" text-anchor="middle" class="lbl">L</text>
+
+        <!-- muscle/bone group -->
+        <g data-g="muscle">
+          <!-- mandible rami -->
+          <g class="reg" data-key="mandible"><path d="M150 118 L238 172" stroke="#efe6cf" stroke-width="17" stroke-linecap="round"/><path d="M610 118 L522 172" stroke="#efe6cf" stroke-width="17" stroke-linecap="round"/></g>
+          <!-- medial pterygoid -->
+          <g class="reg" data-key="mpterygoid">
+            <path d="M206 150 Q262 190 300 240 L268 268 Q224 214 176 180Z" fill="#b1543f"/>
+            <path d="M554 150 Q498 190 460 240 L492 268 Q536 214 584 180Z" fill="#b1543f"/>
+          </g>
+          <!-- parotid -->
+          <g class="reg" data-key="parotid">
+            <ellipse cx="147" cy="272" rx="46" ry="62" fill="#c9a13a" opacity=".85"/>
+            <ellipse cx="613" cy="272" rx="46" ry="62" fill="#c9a13a" opacity=".85"/>
+          </g>
+          <!-- SCM -->
+          <g class="reg" data-key="scm">
+            <ellipse cx="196" cy="432" rx="52" ry="34" fill="#8a4436" transform="rotate(-28 196 432)"/>
+            <ellipse cx="564" cy="432" rx="52" ry="34" fill="#8a4436" transform="rotate(28 564 432)"/>
+          </g>
+          <!-- pharyngeal wall + airway -->
+          <g class="reg" data-key="airway">
+            <circle cx="380" cy="252" r="84" fill="#b1543f"/>
+            <path id="airwayPath" d="M380 190 c34 0 62 28 62 62 s-28 62 -62 62 -62 -28 -62 -62 28 -62 62 -62z" fill="#0a1013"/>
+          </g>
+          <!-- vertebra -->
+          <g class="reg" data-key="vertebra">
+            <path d="M332 404 h96 l16 34 -14 44 h-100 l-14 -44z" fill="#efe6cf"/>
+            <path d="M380 486 l0 46" stroke="#efe6cf" stroke-width="14" stroke-linecap="round"/>
+            <circle cx="380" cy="470" r="24" fill="#dfe7ea" stroke="#b8c4c8"/>
+            <circle cx="380" cy="470" r="9" fill="#8ea0a6"/>
+          </g>
+          <g class="reg" data-key="longus">
+            <ellipse cx="316" cy="418" rx="22" ry="14" fill="#b1543f"/>
+            <ellipse cx="444" cy="418" rx="22" ry="14" fill="#b1543f"/>
+          </g>
+        </g>
+
+        <!-- spaces group -->
+        <g data-g="spaces">
+          <!-- PPS fat wedges -->
+          <g class="reg" data-key="pps">
+            <path d="M300 172 L212 214 L252 330 L330 300 Z" fill="#f4e08a"/>
+            <path d="M460 172 L548 214 L508 330 L430 300 Z" fill="#f4e08a"/>
+          </g>
+          <!-- retropharyngeal crescent -->
+          <g class="reg" data-key="rps">
+            <path d="M296 288 Q380 372 464 288 L455 262 Q380 332 305 262 Z" fill="#ff6b7d"/>
+          </g>
+          <!-- danger space -->
+          <g class="reg" data-key="danger">
+            <path d="M289 296 Q380 386 471 296 L463 280 Q380 356 297 280 Z" fill="#ff9f4a" opacity=".9"/>
+          </g>
+        </g>
+
+        <!-- fascia group -->
+        <g data-g="fascia">
+          <g class="reg" data-key="bucco">
+            <path d="M296 288 Q380 372 464 288" fill="none" stroke="#ffe3a3" stroke-width="3"/>
+            <path d="M300 172 L330 300" fill="none" stroke="#ffe3a3" stroke-width="2.5"/>
+            <path d="M460 172 L430 300" fill="none" stroke="#ffe3a3" stroke-width="2.5"/>
+          </g>
+          <g class="reg" data-key="alar"><path d="M289 296 Q380 386 471 296" fill="none" stroke="#fff" stroke-width="2" stroke-dasharray="7 5"/></g>
+          <g class="reg" data-key="prevertebral"><path d="M276 300 Q380 404 484 300" fill="none" stroke="#a98bff" stroke-width="2.5"/></g>
+          <g class="reg" data-key="investing">
+            <path d="M70 300 C70 140 200 34 380 34 C560 34 690 140 690 300 C690 470 560 590 380 590 C200 590 70 470 70 300Z" fill="none" stroke="#6f8a93" stroke-width="2.5" stroke-dasharray="2 4" opacity=".7"/>
+          </g>
+        </g>
+
+        <!-- styloid partition -->
+        <g id="styloidG">
+          <g stroke="#0f1a1f" stroke-width="3"><path d="M300 172 L252 330"/><path d="M460 172 L508 330"/></g>
+          <g fill="#efe6cf" stroke="#0f1a1f" stroke-width="1.5">
+            <path d="M266 258 l-16 40 -8 -34z"/><path d="M494 258 l16 40 8 -34z"/>
+          </g>
+          <g class="reg" data-key="prestyloid">
+            <path d="M300 172 L212 214 L243 300 L305 285 Z" fill="#3fd0c9" opacity=".3"/>
+            <path d="M460 172 L548 214 L517 300 L455 285 Z" fill="#3fd0c9" opacity=".3"/>
+          </g>
+          <g class="reg" data-key="poststyloid">
+            <path d="M243 300 L252 330 L330 300 L305 285Z" fill="#a98bff" opacity=".35"/>
+            <path d="M517 300 L508 330 L430 300 L455 285Z" fill="#a98bff" opacity=".35"/>
+          </g>
+          <text x="150" y="205" class="lbl" style="fill:#7ff0e9">pre-styloid</text>
+          <text x="600" y="205" class="lbl" style="fill:#7ff0e9">pre-styloid</text>
+          <text x="150" y="360" class="lbl" style="fill:#c9b4ff">post-styloid</text>
+          <text x="600" y="360" class="lbl" style="fill:#c9b4ff">post-styloid</text>
+        </g>
+
+        <!-- vessels & nerves -->
+        <g data-g="vessels">
+          <g class="reg" data-key="carotid">
+            <circle cx="286" cy="372" r="13" fill="#e23552" stroke="#ffd0d8"/><circle cx="286" cy="372" r="4.5" fill="#fff" opacity=".55"/>
+            <circle cx="474" cy="372" r="13" fill="#e23552" stroke="#ffd0d8"/><circle cx="474" cy="372" r="4.5" fill="#fff" opacity=".55"/>
+          </g>
+          <g class="reg" data-key="ijv">
+            <ellipse cx="250" cy="392" rx="20" ry="13" fill="#2f6fd6" stroke="#a9c8f5"/>
+            <ellipse cx="510" cy="392" rx="20" ry="13" fill="#2f6fd6" stroke="#a9c8f5"/>
+          </g>
+          <g class="reg" data-key="nerves">
+            <circle cx="312" cy="398" r="5" fill="#f0e07a"/><circle cx="448" cy="398" r="5" fill="#f0e07a"/>
+            <circle cx="300" cy="346" r="4" fill="#f0e07a"/><circle cx="460" cy="346" r="4" fill="#f0e07a"/>
+          </g>
+          <g class="reg" data-key="eustachian">
+            <path d="M318 168 q-30 -18 -56 -22" stroke="#c9b4ff" stroke-width="7" fill="none" stroke-linecap="round" opacity=".8"/>
+            <path d="M442 168 q30 -18 56 -22" stroke="#c9b4ff" stroke-width="7" fill="none" stroke-linecap="round" opacity=".8"/>
+          </g>
+        </g>
+
+        <!-- labels -->
+        <g data-g="labels" class="lbl">
+          <g stroke="var(--line2)" fill="none" stroke-width="1">
+            <path d="M690 250 L640 250"/><path d="M60 300 L110 300"/>
+            <path d="M252 330 L200 350"/><path d="M508 330 L560 350"/>
+            <path d="M380 340 L380 320"/>
+          </g>
+          <text x="255" y="196">PPS fat</text>
+          <text x="440" y="196">PPS fat</text>
+          <text x="380" y="256" text-anchor="middle" style="fill:#fff;font-size:13px">oropharynx</text>
+          <text x="380" y="345" text-anchor="middle" style="fill:#ffb3bd;font-size:11px">retropharyngeal space (RPS)</text>
+          <text x="380" y="374" text-anchor="middle" style="fill:#ffc48a;font-size:10.5px">danger space</text>
+          <text x="380" y="500" text-anchor="middle" style="fill:#cfe0e6;font-size:10.5px">vertebral body · spinal cord</text>
+          <text x="196" y="120" style="fill:#efe6cf;font-size:10.5px">mandible (ramus)</text>
+          <text x="96" y="272" style="fill:#f0d78b;font-size:10.5px">parotid</text>
+          <text x="596" y="272" style="fill:#f0d78b;font-size:10.5px">parotid</text>
+          <text x="140" y="452" style="fill:#e09181;font-size:10.5px">SCM</text>
+          <text x="576" y="452" style="fill:#e09181;font-size:10.5px">SCM</text>
+          <text x="150" y="164" style="fill:#e09181;font-size:10.5px">medial pterygoid</text>
+          <text x="228" y="404" style="fill:#ff8ea0;font-size:10px">ICA</text>
+          <text x="196" y="424" style="fill:#9dbdf0;font-size:10px">IJV</text>
+          <text x="256" y="150" style="fill:#c9b4ff;font-size:10px">Eustachian tube</text>
+          <text x="380" y="308" text-anchor="middle" style="fill:#ffe3a3;font-size:10px">buccopharyngeal fascia</text>
+        </g>
+      </svg>
+      <div id="axialInfo">
+        <div class="kicker">Structure detail</div>
+        <h4 id="axTitle">Pick a region</h4>
+        <p id="axBody" class="small" style="color:var(--ink2)">Click the fat wedge for the parapharyngeal space, the red crescent for the retropharyngeal space, or the vessels. Toggle “styloid partition” to split the PPS into its two surgical compartments.</p>
+      </div>
+    </div>
+    <div class="grid" style="gap:.7rem">
+      <figure>
+        <div class="fig" style="padding:.6rem">
+          <img src="assets/axial-pps.jpg" alt="Axial schematic of the neck at the level of the oropharynx showing the parapharyngeal space" loading="lazy">
+          <figcaption><b>Plate 2 — axial, labelled.</b> Classic teaching slice: paired fat “V” with the apex pointing posterolaterally toward the styloid process and carotid sheath. Loss of that sharp fat triangle on CT = the earliest sign of pharyngeal/tonsillar inflammation spreading outward.</figcaption>
+        </div>
+      </figure>
+      <div class="card"><span class="tag" style="background:var(--violet)"></span>
+        <h3>Four doors out of the PPS</h3>
+        <div class="fact"><b>↑</b><span>Skull base / jugular foramen → intracranial (middle/posterior fossa)</span></div>
+        <div class="fact"><b>←→</b><span>Infratemporal fossa, orbit (via inferior orbital fissure), masticator space</span></div>
+        <div class="fact"><b>↓</b><span>Submandibular space → contralateral side → mediastinum via carotid sheath</span></div>
+        <div class="fact"><b>Medial</b><span>Pharyngeal wall → RPS → danger space</span></div>
+      </div>
+      <div class="note" style="margin:0"><b>Clinical echo of this slice.</b> A PPS mass bulges the <b>tonsil and posterior pillar medially</b> with normal overlying mucosa; a peritonsillar abscess bulges the <b>soft palate/tonsil</b> with uvular deviation and a shiny inflamed surface. Same view, opposite message.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EXTENT ============ -->
+<section id="extent">
+  <div class="sec-head">
+    <div><div class="kicker">03 · Vertical map</div><h2>How far down does each space go?</h2></div>
+    <span class="pill">animated · click a bar</span>
+  </div>
+  <p class="lead" style="margin-bottom:1.2rem">Depth of the deep neck spaces is the single most useful fact on this page: it decides whether an abscess can be watched with antibiotics or whether the chest must be opened. Bars are drawn on one shared scale — <b>skull base at the top, diaphragm at the bottom</b>.</p>
+  <div class="fig" id="extentBox">
+    <div class="extent" id="extent">
+      <div class="scale" id="scale"></div>
+      <div class="eh"><b class="c-rps">Retropharyngeal</b><span>alar fascia ends ≈ T1–T2</span></div>
+      <div class="eh"><b class="c-dg">Danger space</b><span>alar → prevertebral</span></div>
+      <div class="eh"><b class="c-ppsp">Parapharyngeal</b><span>base → apex at hyoid</span></div>
+      <div class="eh"><b style="color:var(--pv)">Prevertebral / carotid sheath</b><span>two long companions</span></div>
+      <div class="track" id="t1"></div><div class="track" id="t2"></div><div class="track" id="t3"></div><div class="track" id="t4"></div>
+    </div>
+    <div class="grid g2" style="margin-top:1.1rem; padding-top:.9rem; border-top:1px solid var(--line)">
+      <div><b class="c-rps" id="xT">Retropharyngeal space</b><p class="small" id="xB" style="color:var(--ink2)">Skull base → T1–T2. Contained because the alar fascia blends into the buccopharyngeal fascia inferiorly, and the midline raphe resists crossing. Expect a <em>compartmentalised</em> collection unless it ruptures posteriorly.</p></div>
+      <div><span class="hint">Level key: hyoid ≈ C3, cricoid ≈ C6, thoracic inlet ≈ T1, aortic arch ≈ T4, diaphragm ≈ T8–T12 on inspiration. Schematic spacing, real anatomy is lordotic.</span></div>
+    </div>
+  </div>
+  <div class="grid g3" style="margin-top:1.1rem">
+    <div class="card dg"><span class="tag"></span><h3>Route A — “the slide”</h3><p class="small">RPA erodes posteriorly through the alar fascia → <b>danger space</b> → <b>posterior mediastinum</b> → empyema, pericarditis. Fast, midline, often out of proportion to the neck findings.</p></div>
+    <div class="card"><span class="tag" style="background:var(--violet)"></span><h3>Route B — “the sleeve”</h3><p class="small">PPS or tonsillar infection → <b>carotid sheath</b> → mediastinum along the great vessels; plus septic <b>IJV thrombophlebitis</b> (Lemierre) with pulmonary emboli.</p></div>
+    <div class="card pps"><span class="tag"></span><h3>Route C — “around the corner”</h3><p class="small">PPS apex communicates with the <b>submandibular space</b>: dental origin infection goes floor-of-mouth → PPS (and back). Ludwig angina closes the airway from below.</p></div>
+  </div>
+  <div style="margin-top:1.1rem" class="fig">
+    <img src="assets/corridor-spread.jpg" alt="Schematic of danger space corridor and inferior spread of infection to the mediastinum" loading="lazy">
+    <figcaption><b>Plate 3 — the corridor.</b> Left: midline sagittal/coronal view showing the collection tracking along the prevertebral planes past the thoracic inlet. Right: same process at the level of the mediastinum — mediastinitis around the pericardium, with the diaphragm as the lower stop of the danger space.</figcaption>
+  </div>
+</section>
+
+<!-- ============ BOUNDARIES ============ -->
+<section id="boundaries">
+  <div class="sec-head">
+    <div><div class="kicker">04 · Memorise this</div><h2>Boundaries, side by side</h2></div>
+    <div class="tabs">
+      <button class="btn on" data-tab="b-rps" onclick="showTab(this,'boundaries')">Retropharyngeal</button>
+      <button class="btn" data-tab="b-pps" onclick="showTab(this,'boundaries')">Parapharyngeal</button>
+      <button class="btn" data-tab="b-dg" onclick="showTab(this,'boundaries')">Danger space</button>
+    </div>
+  </div>
+  <div class="tabp on" id="b-rps">
+    <div class="grid g2">
+      <div class="tw"><table>
+        <thead><tr><th colspan="2">Retropharyngeal space (anterior viscus / “retrovisceral” space)</th></tr></thead>
+        <tbody>
+          <tr><td><b>Anterior</b></td><td>Buccopharyngeal fascia covering the posterior aspect of the <b>superior &amp; middle constrictors</b> (nasopharynx to oesophagus level)</td></tr>
+          <tr><td><b>Posterior</b></td><td><b>Alar fascia</b> (a thin accessory split from the prevertebral layer)</td></tr>
+          <tr><td><b>Lateral</b></td><td>Carotid sheath; blends with the PPS laterally — no true fascial wall</td></tr>
+          <tr><td><b>Superior</b></td><td>Base of skull: alar fascia splits from prevertebral at the <b>petrous temporal bone</b></td></tr>
+          <tr><td><b>Inferior</b></td><td><b>T1–T2</b>, where alar fascia fuses with the buccopharyngeal fascia (some texts: T2)</td></tr>
+          <tr><td><b>Contents</b></td><td>Loose areolar tissue + fat; <b>retropharyngeal lymph nodes of Rouvière</b> (C1–C2/C3, lateral to midline, largest in infants, atrophy by ~4–5 y); small vessels from ascending pharyngeal artery; the <b>median raphe</b></td></tr>
+          <tr><td><b>Continues as</b></td><td>→ danger space (posteriorly) · → mediastinum via carotid sheath · → PPS laterally</td></tr>
+        </tbody>
+      </table></div>
+      <div class="grid" style="gap:.7rem">
+        <div class="card rps"><span class="tag"></span>
+          <h3>Exam one-liner</h3>
+          <p class="small">“The retropharyngeal space lies between the <b>buccopharyngeal</b> and <b>alar</b> fascia, runs from skull base to <b>T2</b>, contains the <b>nodes of Rouvière</b>, and is bounded in the midline by the <b>raphe</b>.”</p>
+        </div>
+        <div class="note red" style="margin:0"><b>Common trap:</b> many books say “RPS = between buccopharyngeal and <b>prevertebral</b> fascia”. That definition folds the danger space in and predicts disease down to the diaphragm — which is exactly the point of separating the <b>alar</b> layer. Know both conventions and state which one you are using.</div>
+        <div class="card flat"><span class="tag" style="background:var(--teal)"></span><h3>Developmental point</h3><p class="small">In small children the RPS is a <b>paired</b> set of compartments divided by the vascular midline raphe; suppuration of the lateral nodes therefore makes a <b>unilateral</b> bulge. After the raphe atrophies, collections spread <b>bilaterally and midline</b>.</p></div>
+      </div>
+    </div>
+  </div>
+  <div class="tabp" id="b-pps">
+    <div class="grid g2">
+      <div class="tw"><table>
+        <thead><tr><th colspan="2">Parapharyngeal space (lateral pharyngeal / pharyngomaxillary space)</th></tr></thead>
+        <tbody>
+          <tr><td><b>Shape</b></td><td><b>Inverted pyramid / cone</b>, fat-filled. Base on the skull base, apex on the hyoid.</td></tr>
+          <tr><td><b>Medial</b></td><td><b>Superior constrictor</b> + buccopharyngeal fascia, tonsillar fossa; the “diving board” of the medial pterygoid–pharyngeal raphe</td></tr>
+          <tr><td><b>Lateral</b></td><td><b>Medial pterygoid</b> muscle, inner surface of the <b>mandibular ramus</b>, deep (medial) lobe of the <b>parotid</b></td></tr>
+          <tr><td><b>Anterior</b></td><td>Submandibular gland, mylohyoid, pterygomandibular raphe, body of mandible</td></tr>
+          <tr><td><b>Posterior</b></td><td>Parotid gland &amp; <b>styloid process with its muscles</b>, SCM, prevertebral fascia/carotid sheath</td></tr>
+          <tr><td><b>Superior</b></td><td>Skull base: petrous temporal bone, tympanic plate; cartilage of the <b>Eustachian tube</b> at the torus tubarius</td></tr>
+          <tr><td><b>Inferior</b></td><td>Apex at the <b>greater cornu of the hyoid</b> / medial pterygoid lower border — continuous with the submandibular space</td></tr>
+          <tr><td><b>Divider</b></td><td><b>Styloid process + styloid diaphragm</b> (fascia from styloid to angular spine of the mandible = tensor-vascular-styloid fascia) → pre-/post-styloid compartments</td></tr>
+        </tbody>
+      </table></div>
+      <div class="grid" style="gap:.7rem">
+        <div class="card pps"><span class="tag"></span>
+          <h3>Same pyramid in 4 words</h3>
+          <p class="small"><b>Base up, apex down, pharynx inside, parotid outside.</b> If you can draw the cone, you can answer every boundary question.</p>
+        </div>
+        <div class="tw"><table>
+          <thead><tr><th>Compartment</th><th>Contents</th><th>Classic lesion</th></tr></thead>
+          <tbody>
+            <tr><td><b class="c-ppsp">Pre-styloid</b><br><span class="sub">masticator / salivary</span></td><td>Fat, deep lobe of parotid, internal maxillary artery, V3 branches (auriculotemporal, inferior alveolar), lymph nodes</td><td>Pleomorphic adenoma of deep parotid lobe, mucoepidermoid/minor salivary tumour, odontogenic abscess, lymphoma</td></tr>
+            <tr><td><b style="color:var(--violet)">Post-styloid</b><br><span class="sub">carotid / neural</span></td><td>ICA &amp; ECA, IJV, CN <b>IX, X, XI, XII</b>, sympathetic chain, deep cervical nodes</td><td>Paraganglioma (glomus vagale), schwannoma/neurofibroma, carotid aneurysm, metastatic node, glomus jugulare dropping in</td></tr>
+          </tbody>
+        </table></div>
+        <div class="note blue" style="margin:0"><b>Rule of thumb:</b> prestyloid mass → pushes the tonsil medially and may cause <b>trismus</b>; poststyloid mass → pushes the lateral wall posteromedially <b>without trismus</b> but with <b>lower cranial nerve</b> signs or a pulsatile, non-transilluminant mass. Never biopsy a vascular-appearing PPS mass before imaging — a paraganglioma will bleed.</div>
+      </div>
+    </div>
+  </div>
+  <div class="tabp" id="b-dg">
+    <div class="grid g2">
+      <div class="tw"><table>
+        <thead><tr><th colspan="2">Danger space (retrovisceral “space 4”)</th></tr></thead>
+        <tbody>
+          <tr><td><b>Anterior</b></td><td>Alar fascia (posterior face of the RPS)</td></tr>
+          <tr><td><b>Posterior</b></td><td>Prevertebral fascia over longus colli</td></tr>
+          <tr><td><b>Superior</b></td><td>Skull base — alar and prevertebral layers diverge at the petrous apex</td></tr>
+          <tr><td><b>Inferior</b></td><td><b>Diaphragm</b> (no fusion, no valves, no lymphatics to contain infection)</td></tr>
+          <tr><td><b>Contents</b></td><td>Loose avascular areolar tissue only → “slide for pus”</td></tr>
+          <tr><td><b>Why it matters</b></td><td>Descending necrotizing mediastinitis, empyema, pericarditis; needs <b>CT staging + cervical <em>and</em> thoracic drainage</b></td></tr>
+          <tr><td><b>Neighbour</b></td><td>Prevertebral space lies <em>behind</em> the prevertebral fascia: TB/Pott disease tracks here → psoas/mediastinum</td></tr>
+        </tbody>
+      </table></div>
+      <div class="grid" style="gap:.7rem">
+        <figure><div class="fig" style="padding:.6rem">
+          <img src="assets/sagittal-fascia.jpg" alt="Sagittal schematic of the neck showing buccopharyngeal, alar and prevertebral fascia" loading="lazy">
+          <figcaption><b>Plate 1 — sagittal.</b> The three fascial lines posterior to the pharynx, from front to back: buccopharyngeal, alar, prevertebral — with the highlighted RPS band between C1 and T2. Anterior structures (epiglottis, vocal cords, trachea) shown for orientation only.</figcaption>
+        </div></figure>
+        <div class="note red" style="margin:0"><b>Surgical implication:</b> a contained RPS abscess can often be drained <b>transorally</b>. Once the alar fascia is breached, transoral drainage alone is not enough — re-image the chest.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTENTS / DIFFERENTIAL ============ -->
+<section id="content">
+  <div class="sec-head">
+    <div><div class="kicker">05 · What lives there, what goes wrong</div><h2>Contents → differential diagnosis</h2></div>
+  </div>
+  <div class="grid g2">
+    <div class="card"><span class="tag" style="background:var(--rps)"></span>
+      <h3>Retropharyngeal space pathology</h3>
+      <div class="tw" style="border:0;margin:0 0 .6rem"><table style="min-width:0;font-size:.88rem">
+        <thead><tr><th>Age / cause</th><th>Mechanism</th></tr></thead>
+        <tbody>
+          <tr><td><b>Children 1–4 y</b></td><td>Suppurative <b>retropharyngeal lymphadenitis</b> after URI / tonsillitis / otitis — nodes of Rouvière are largest here (retropharyngeal abscess, “RPA”)</td></tr>
+          <tr><td><b>Adults</b></td><td><b>Penetrating injury</b>: fish/chicken bone, dental injection, intubation / TEE / endoscopy, trauma to posterior pharyngeal wall</td></tr>
+          <tr><td><b>Oesophageal perforation</b></td><td>Boerhaave, tumour, foreign body → gas + saliva in the space, rapid mediastinal soiling</td></tr>
+          <tr><td><b>Cold abscess</b></td><td>TB of C-spine (Pott) tracking through prevertebral/alar planes, minimal inflammation</td></tr>
+          <tr><td><b>Non-infectious</b></td><td>Haematoma (anticoagulation, trauma), lymphoma/nodal disease, oedema post-surgery, chordoma/retroversion mimic</td></tr>
+        </tbody>
+      </table></div>
+      <ul class="ticks rose">
+        <li><b>Triad to remember:</b> fever + dysphagia/odynophagia + <b>stiff, extended neck</b> (loss of cervical lordosis).</li>
+        <li>Drooling, muffled “hot-potato” voice, trismus if PPS involved, stridor = late &amp; ominous.</li>
+        <li>Inspect the posterior pharyngeal wall: asymmetric bulge above the level of the tonsils is the giveaway.</li>
+        <li><b>Airway first.</b> Nebulised adrenaline/antibiotics for small (≤2–2.5 cm) collections in stable children; I&amp;D (transoral, head-down, suction ready) for large, airway-threatening or adult/foreign-body cases.</li>
+      </ul>
+    </div>
+    <div class="card"><span class="tag" style="background:var(--ppsp)"></span>
+      <h3>Parapharyngeal space pathology</h3>
+      <div class="tw" style="border:0;margin:0 0 .6rem"><table style="min-width:0;font-size:.88rem">
+        <thead><tr><th>Category</th><th>Typical entities</th></tr></thead>
+        <tbody>
+          <tr><td><b>Salivary (pre-styloid)</b></td><td>Pleomorphic adenoma of deep parotid lobe — <b>the most common PPS mass</b> (~40–50 % of all PPS tumours); “dumbbell” through the stylomandibular tunnel; minor-salivary malignancy</td></tr>
+          <tr><td><b>Neurogenic (post-styloid)</b></td><td>Schwannoma/neurofibroma (vagus, sympathetic), <b>paraganglioma</b> (vagal, carotid body, jugulare), meningocele</td></tr>
+          <tr><td><b>Vascular</b></td><td>ICA aneurysm/pseudoaneurysm, IJV thrombosis, arteriovenous malformation, haemangioma/lymphatic malformation in children</td></tr>
+          <tr><td><b>Infective</b></td><td>PPS abscess from tonsillitis, peritonsillar abscess, infected 3rd molar, otitis/mastoid (Bezold), suppurative nodes; actinomycosis</td></tr>
+          <tr><td><b>Nodes / systemic</b></td><td>Metastatic SCC (tonsil, base of tongue, nasopharynx), lymphoma, HIV/TB, branchial cyst (2nd), lipoma, chondroma of the styloid</td></tr>
+        </tbody>
+      </table></div>
+      <ul class="ticks">
+        <li>Tumours: painless <b>lateral neck swelling + medial bulge of the tonsillar fossa</b>, soft palate pushed in, normal mucosa, slow growth over years.</li>
+        <li>Otologic cue: Eustachian tube compression → <b>unilateral serous otitis media / aural fullness</b> in an adult = image the nasopharynx and PPS.</li>
+        <li>Trismus = irritation of medial pterygoid/masticator space (usually prestyloid or infection).</li>
+        <li>Poststyloid nerve signs: hoarseness (X), dysphagia/aspiration &amp; loss of gag (IX), shoulder drop (XI), tongue wasting/deviation (XII), miosis/ptosis — <b>Horner</b> (sympathetic chain); IX–XII combined = <b>Vernet / Collet-Sicard</b> syndromes.</li>
+        <li>Approach for benign prestyloid deep-lobe tumours: <b>transcervical (± mandibulotomy)</b>, not transoral — capsular spillage and facial nerve risk.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="hr"></div>
+  <div class="grid g4" id="decision">
+    <div class="tree" style="grid-column:1/-1">
+      <div class="node">
+        <div class="q">Step 1 · Where is the bulge? <span class="hint">— look in the mouth, feel the neck</span></div>
+        <div class="opts">
+          <div class="opt r"><b>Posterior pharyngeal wall, midline or paramedian</b>Think <b>RPS</b>: RPA, haematoma, TB cold abscess. Check lateral neck film for prevertebral thickness &amp; gas.</div>
+          <div class="opt y"><b>Lateral pharyngeal wall / tonsil pushed medially</b>Think <b>PPS</b>: deep parotid or neural tumour if slow &amp; painless; abscess if hot, trismus, toxic.</div>
+        </div>
+      </div>
+      <div class="arrow">▼</div>
+      <div class="node">
+        <div class="q">Step 2 · Infection or tumour?</div>
+        <div class="opts">
+          <div class="opt r"><b>Acute, fever, pain, trismus, toxic</b>Airway, blood cultures, IV antibiotics + contrast CT. Drain if ≥2.5 cm, gas, airway compromise, or adult/foreign-body cause. Then hunt for the source (bone, tooth, tonsil, oesophagus).</div>
+          <div class="opt y"><b>Slow, painless, firm, intact mucosa</b>Contrast CT ± MRI of skull base→hyoid. <b>Do not</b> incise or blindly biopsy a PPS mass. Vascular/symmetric markers: urinary/plasma metanephrines for paraganglioma; MRI for fat-rich pleomorphic adenoma.</div>
+        </div>
+      </div>
+      <div class="arrow">▼</div>
+      <div class="node">
+        <div class="q">Step 3 · Has it left the space?</div>
+        <div class="opts">
+          <div class="opt r"><b>Chest pain, sepsis, pleural effusion, wide mediastinum on CXR</b><b>Descending necrotizing mediastinitis</b> until proven otherwise: CT neck + whole chest, early aggressive drainage (often thoracotomy/VATS), ICU, broad-spectrum cover. Mortality climbs steeply beyond 24–48 h.</div>
+          <div class="opt y"><b>Neck only</b>Transcervical or transoral drainage of the involved space, keep drains, serial re-image; dental/ENT source control to stop recurrence.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CLINICAL ============ -->
+<section id="clinical">
+  <div class="sec-head">
+    <div><div class="kicker">06 · Bedside</div><h2>Signs, syndromes &amp; the traps</h2></div>
+    <span class="pill">ward rounds</span>
+  </div>
+  <div class="grid g3">
+    <div class="card"><span class="tag" style="background:var(--rps)"></span><h3>Retropharyngeal abscess — checklist</h3>
+      <div class="fact"><b>Who</b><span>Peak 2–4 y; adults after trauma/instrumentation</span></div>
+      <div class="fact"><b>Look</b><span>Torticollis, neck held extended, drooling, muffled voice, stridor</span></div>
+      <div class="fact"><b>See</b><span>Asymmetric bulge of posterior wall, usually paramedian in kids</span></div>
+      <div class="fact"><b>Film</b><span>Loss of cervical lordosis; prevertebral soft tissue widening; gas</span></div>
+      <div class="fact"><b>Scan</b><span>Contrast CT neck + upper chest, always including the mediastinum</span></div>
+      <div class="fact"><b>Don't</b><span>Do not probe the airway in a child with stridor — theatre, ENT + anaesthetics, rigid suction, head-down position</span></div>
+    </div>
+    <div class="card"><span class="tag" style="background:var(--ppsp)"></span><h3>PPS abscess — checklist</h3>
+      <div class="fact"><b>Who</b><span>Older children/adults; dental (3rd molar), post-tonsillitis, “collar-stick” abscess</span></div>
+      <div class="fact"><b>Look</b><span>Severe trismus, firm tender angle-of-mandible swelling, medially displaced tonsil with <b>flat</b> palate (vs uvular deviation in PTA)</span></div>
+      <div class="fact"><b>Trap</b><span>Little intra-oral swelling because the space is deep — “toxic patient, boring mouth”</span></div>
+      <div class="fact"><b>Complication</b><span>IJV thrombosis &amp; septic pulmonary emboli (Lemierre), CN IX–XII palsy, carotid blowout, mediastinitis via carotid sheath</span></div>
+      <div class="fact"><b>Drain</b><span>Transcervical for most; transoral only for well-defined medial pointing collections</span></div>
+    </div>
+    <div class="card"><span class="tag" style="background:var(--amber)"></span><h3>Red flags → act now</h3>
+      <ul class="ticks amber" style="margin-bottom:0">
+        <li>Stridor, tripod position, pooling of saliva</li>
+        <li>Neck swelling crossing the midline or tracking below the clavicle</li>
+        <li>Chest pain + fever + recent sore throat = mediastinitis workup</li>
+        <li>Lower cranial nerve palsies with a PPS mass</li>
+        <li>Diabetes, immunosuppression, or anticoagulation with any deep neck pain</li>
+        <li>Failure to improve on 48 h of IV antibiotics → re-image, don't switch and wait</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="hr"></div>
+  <div class="split">
+    <div class="fig">
+      <div class="bar"><span class="lab">Lateral neck radiograph · measuring prevertebral soft tissue</span></div>
+      <svg viewBox="0 0 760 400" role="img" aria-label="Lateral cervical spine schematic with prevertebral soft tissue measurements">
+        <rect x="10" y="10" width="740" height="380" rx="14" fill="#0b1417"/>
+        <!-- vertebrae with lordosis -->
+        <g id="xr"></g>
+        <!-- anterior skin / airway lines -->
+        <path id="preVertLine" d="M300 44 C300 150 322 210 356 268" fill="none" stroke="#ff6b7d" stroke-width="3"/>
+        <path d="M212 40 C212 150 236 220 272 288" fill="none" stroke="#6f8a93" stroke-width="2" stroke-dasharray="4 4"/>
+        <text x="120" y="60" class="lbl" style="fill:#8aa4ad">skin line</text>
+        <text x="330" y="300" class="lbl" style="fill:#ff9fa9">posterior pharyngeal wall = front of the soft-tissue band</text>
+        <!-- calipers -->
+        <g stroke="#f5b544" stroke-width="2.5">
+          <line x1="212" y1="78" x2="300" y2="78"/><line x1="212" y1="70" x2="212" y2="86"/><line x1="300" y1="70" x2="300" y2="86"/>
+          <line x1="240" y1="252" x2="356" y2="252"/><line x1="240" y1="244" x2="240" y2="260"/><line x1="356" y1="244" x2="356" y2="260"/>
+        </g>
+        <text x="150" y="60" class="lbl" style="fill:#f5b544">C2 level ≤ 7 mm</text>
+        <text x="150" y="240" class="lbl" style="fill:#f5b544">C6 level ≤ 14 mm</text>
+        <g stroke="#8fd64f" stroke-width="1.5"><line x1="286" y1="78" x2="286" y2="78"/></g>
+        <text x="430" y="120" class="lbl" style="fill:#a8bcc3">rule of thumb: at C2, soft tissue &lt; ½ the AP diameter of the same vertebral body;<br>at C6, soft tissue ≤ the AP diameter of the vertebral body.</text>
+        <text x="430" y="150" class="lbl" style="fill:#a8bcc3">Beware: cry, extension, supine &amp; very young age all falsely thicken it.</text>
+        <text x="430" y="176" class="lbl" style="fill:#ff9fa9">Gas, straightened lordosis, or a displaced posterior wall = CT now.</text>
+        <g id="xrlabels"></g>
+      </svg>
+      <figcaption><b>Plate for the plain film.</b> Retropharyngeal swelling is measured from the <b>anterior-inferior margin of the vertebral body</b> to the <b>posterior air column</b> at C2 and C6 — never at the disc space, and never in a crying, supine, extended-neck child without caveats. Sensitivity is poor: a normal film does not exclude an abscess.</figcaption>
+    </div>
+    <div class="grid" style="gap:.7rem">
+      <div class="card"><span class="tag" style="background:var(--teal)"></span><h3>Named syndromes near the PPS</h3>
+        <div class="fact"><b>Vernet</b><span>Jugular foramen: IX + X + XI</span></div>
+        <div class="fact"><b>Collet-Sicard</b><span>IX–XII, no Horner (extracranial, poststyloid PPS)</span></div>
+        <div class="fact"><b>Villaret</b><span>IX–XII <em>+ Horner</em> — retroparotid space</span></div>
+        <div class="fact"><b>Jackson</b><span>X, XI, XII — below the jugular foramen</span></div>
+        <div class="fact"><b>Lemierre</b><span>Post-tonsillar <em>Fusobacterium necrophorum</em> septic thrombophlebitis of the IJV with pulmonary emboli</span></div>
+        <div class="fact"><b>Bezold</b><span>Mastoid tip abscess tracking into the neck via SCM — a PPS look-alike</span></div>
+      </div>
+      <div class="card flat"><span class="tag" style="background:var(--lime)"></span><h3>Mnemonic for the PPS differential</h3>
+      <p class="small">The <b>“P”</b> list, ordered by how often you'll meet them: <b>P</b>leomorphic adenoma (deep parotid), <b>P</b>araganglioma, <b>P</b>eripheral nerve sheath tumour (schwannoma/neurofibroma), <b>P</b>arotid rest/inflammatory, <b>P</b>seudoaneurysm, <b>P</b>us (abscess) — plus <b>P</b>oorly-differentiated nodal metastasis and <b>L</b>ymphoma as the ugly extras. Always exclude a vascular lesion before touching it.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ IMAGING ============ -->
+<section id="imaging">
+  <div class="sec-head">
+    <div><div class="kicker">07 · Scan-reading</div><h2>How it looks on imaging</h2></div>
+    <span class="pill">CT / MRI / US</span>
+  </div>
+  <div class="tw"><table>
+    <thead><tr><th style="width:15%">Modality</th><th style="width:30%">What you are looking for</th><th>Retropharyngeal space</th><th>Parapharyngeal space</th></tr></thead>
+    <tbody>
+      <tr><td><b>Lateral C-spine XR</b></td><td>Prevertebral soft-tissue thickness, loss of lordosis, gas, foreign body</td><td>Fat stripe &gt; 7 mm at C2 / &gt; 14 mm at C6; straightened spine; air-fluid level = abscess</td><td>Usually normal; may efface the fat plane or displace the lateral wall</td></tr>
+      <tr><td><b>US (paediatric)</b></td><td>Submandibular/transcutaneous probe of a bulging space</td><td>Can separate <b>abscess (fluid, avascular)</b> from <b>cellulitis (hyperaemic, solid)</b> — changes management in children</td><td>Useful for superficial extension &amp; IJV compressibility (thrombus)</td></tr>
+      <tr><td><b>CT with contrast</b><br><span class="sub">the workhorse</span></td><td>Ring-enhancing collection, gas, fascial thickening, extent to mediastinum</td><td>Loculated hypodense collection posterior to the pharynx, thick enhancing wall, displacement of the airway anteriorly; check the alar plane and the chest</td><td><b>Loss of the normal fat density</b> is the earliest sign. Rim-enhancing collection in the fat wedge, medial deviation of the lateral pharyngeal wall, thrombus in the IJV, bone erosion at the skull base</td></tr>
+      <tr><td><b>MRI</b></td><td>Tumour characterisation, perineural/ skull-base spread</td><td>Diffuse inflammatory change vs collection; TB/“cold” abscess looks dramatic on T2 with mild enhancement</td><td>Pleomorphic adenoma: <b>T2-bright, lobulated</b>, “dumbbell” through the stylomandibular tunnel. Paraganglioma: <b>salt-and-pepper</b>, flow voids, intense enhancement. Schwannoma: target sign, along a nerve</td></tr>
+      <tr><td><b>Angio / nuclear</b></td><td>Vascular lesions, surgical planning</td><td>—</td><td>CTA for aneurysm/pseudoaneurysm; <sup>111</sup>In-octreotide or <sup>68</sup>Ga-DOTATATE for paraganglioma; embolisation ± balloon test occlusion of the ICA</td></tr>
+    </tbody>
+  </table></div>
+  <div class="grid g3" style="margin-top:1rem">
+    <div class="card flat"><h3>Three sentences to say out loud when reading</h3><p class="small">1) Is the PPS fat still fat (dark on CT) or is it stranding/fluid? 2) Which side of the styloid line is the lesion, and does it splay the carotid–IJV bundle? 3) How far down does it go — did it cross the alar fascia into the danger space, and is the mediastinum clean?</p></div>
+    <div class="card flat"><h3>Pitfalls</h3><p class="small">Pharyngeal constrictor asymmetry from swallowed air/peristalsis mimics asymmetry. Unopacified IJV looks like thrombus. A high-riding tonsil/lymphoid tissue bulges the lateral wall. Cervical oesophageal diverticulum or a retropharyngeal oedema in heart failure can look like an abscess. Children: a crying, extended neck falsely thickens the prevertebral band.</p></div>
+    <div class="card flat"><h3>Reporting template</h3><p class="small">“Hypodense collection with peripheral enhancement centred in the <em>right/left</em> retropharyngeal space, <em>x</em> mm craniocaudal, from <em>level</em> to <em>level</em>. Alar fascia <em>intact / breached</em>. No danger-space fluid. Parapharyngeal fat planes <em>preserved / effaced</em>. Airway narrowed to <em>x</em> mm. Great vessels patent, IJV <em>…</em>. Lung bases/mediastinum <em>…</em>”</p></div>
+  </div>
+</section>
+
+<!-- ============ COMPARE ============ -->
+<section id="compare">
+  <div class="sec-head">
+    <div><div class="kicker">08 · One-glance contrast</div><h2>RPS vs PPS vs danger space</h2></div>
+  </div>
+  <div class="tw"><table>
+    <thead><tr><th style="width:14%">Feature</th><th class="c-rps" style="width:29%">Retropharyngeal space</th><th class="c-ppsp" style="width:29%">Parapharyngeal space</th><th style="width:28%">Danger space</th></tr></thead>
+    <tbody>
+      <tr><td><b>Position</b></td><td>Midline, <b>behind</b> pharynx</td><td><b>Beside</b> pharynx, paired</td><td>Midline, behind RPS</td></tr>
+      <tr><td><b>Roof</b></td><td>Skull base (alar splits off prevertebral)</td><td>Skull base / petrous + tympanic plate</td><td>Skull base</td></tr>
+      <tr><td><b>Floor</b></td><td><b>T1–T2</b> (alar meets buccopharyngeal)</td><td><b>Hyoid apex</b></td><td><b>Diaphragm</b></td></tr>
+      <tr><td><b>Contents</b></td><td>Loose tissue, nodes of Rouvière, raphe</td><td>Fat, parotid deep lobe, ICA/IJV, CN IX–XII, sympathetic chain</td><td>Areolar tissue only</td></tr>
+      <tr><td><b>Typical lesion</b></td><td>Abscess (child) / post-traumatic, TB cold abscess</td><td>Tumour (parotid deep lobe, neural) / abscess</td><td>Pus highway → mediastinitis</td></tr>
+      <tr><td><b>Cardinal sign</b></td><td>Bulging <b>posterior</b> pharyngeal wall, neck extended</td><td>Bulging <b>lateral</b> wall/tonsil ± trismus, ± CN IX–XII palsy</td><td>Disproportionate sepsis, chest findings, gas along prevertebral line</td></tr>
+      <tr><td><b>Airway risk</b></td><td>High — direct posterior compression</td><td>Moderate — lateral displacement</td><td>Low acutely, high via mediastinum</td></tr>
+      <tr><td><b>Drainage</b></td><td>Transoral I&amp;D; external for large/multiloculated</td><td>Transcervical (tumours too); transoral only for pointing medial abscess</td><td>Neck <b>+ thoracic</b> drainage, debridement, ICU</td></tr>
+      <tr><td><b>Do not</b></td><td>Incise outside theatre in a child with stridor</td><td>Incise/biopsy an undiagnosed PPS mass (vascular!)</td><td>Rely on antibiotics alone or image the neck only</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<!-- ============ GALLERY ============ -->
+<section id="gallery">
+  <div class="sec-head">
+    <div><div class="kicker">09 · Plates</div><h2>Illustrated plates</h2></div>
+    <span class="pill">click to enlarge · <span class="mono">assets/</span> in the repo</span>
+  </div>
+  <div class="gal">
+    <a href="assets/sagittal-fascia.jpg" data-cap="Plate 1 · Sagittal neck — buccopharyngeal, alar and prevertebral fascia with the retropharyngeal space highlighted between C1 and T2."><img src="assets/sagittal-fascia.jpg" alt="Sagittal neck fascia schematic" loading="lazy"><div class="cap"><b>1 · Sagittal fascia layers</b><br><span class="hint">Pharynx → RPS → vertebrae</span></div></a>
+    <a href="assets/axial-pps.jpg" data-cap="Plate 2 · Axial slice at the oropharynx — inverted fat wedge of the parapharyngeal space, styloid partition, parotid, ICA/IJV, prevertebral muscle."><img src="assets/axial-pps.jpg" alt="Axial neck schematic at oropharynx level" loading="lazy"><div class="cap"><b>2 · Axial PPS</b><br><span class="hint">Pre- vs post-styloid</span></div></a>
+    <a href="assets/corridor-spread.jpg" data-cap="Plate 3 · The danger-space corridor — a retropharyngeal collection tracking from the skull base through the posterior mediastinum to the diaphragm."><img src="assets/corridor-spread.jpg" alt="Danger space corridor and mediastinal spread schematic" loading="lazy"><div class="cap"><b>3 · Corridor of spread</b><br><span class="hint">Skull base → diaphragm</span></div></a>
+  </div>
+  <div class="grid g4" style="margin-top:1rem">
+    <div class="card flat"><h3>Draw-it test</h3><p class="small">Blank paper, 60 s: sagittal neck with the 3 fascial lines + the T2 fusion. Then axial neck with 2 fat wedges + styloid line + carotid sheath. If you can draw both, you own this topic.</p></div>
+    <div class="card flat"><h3>Teach-back line</h3><p class="small">“Retropharyngeal = behind, parapharyngeal = beside. Behind stops at T2 unless it breaks through the alar fascia; beside is a fat pyramid that carries parotid tumours up to the skull base and nerve tumours to the carotid sheath.”</p></div>
+    <div class="card flat"><h3>Where it is tested</h3><p class="small">ENT finals, FRCS ORL-HNS, radiology physics of neck spaces, MRCS Part A (deep neck infections), and every viva where you are asked “what is the danger space?”</p></div>
+    <div class="card flat"><h3>Primary sources</h3><p class="small">Grodinsky &amp; Holyoke, <em>Am J Anat</em> 1938 (interfascial planes); Levitt &amp; Maran, <em>J Laryngol Otol</em> 1990 (PPS tumours); Papadakis et al., <em>Head Neck</em> 2001 (PPS lesions); Logan Jones et al. on descending necrotizing mediastinitis. See <span class="mono">allam.pdf</span> / <span class="mono">Macleod_*.pdf</span> in this repo for your own notes.</p></div>
+  </div>
+</section>
+
+<!-- ============ QUIZ ============ -->
+<section id="quiz">
+  <div class="sec-head">
+    <div><div class="kicker">10 · Self-test</div><h2>Twelve questions</h2></div>
+    <div class="score"><span class="small" id="scoreTxt" style="min-width:7.5rem">0 / 12 correct</span><span class="m"><i id="scoreBar"></i></span><button class="btn sm" onclick="resetQuiz()">Reset</button></div>
+  </div>
+  <div id="quizBox"></div>
+</section>
+
+</main>
+
+<footer class="wrap">
+  <div class="grid g2" style="align-items:end">
+    <p><b>Study aid, not clinical guidance.</b> Diagrams are schematic and deliberately simplified (fascial planes are drawn separated where they are adherent, vertebral levels are approximate). Cross-check against your own texts before any patient decision. Infection of the deep neck spaces is an airway and sepsis emergency — escalate, protect the airway, image the chest.</p>
+    <p class="small">Built as a single self-contained page: <span class="mono">index.html</span> + <span class="mono">assets/*.jpg</span> in this repository. Interactive diagrams are hand-coded SVG (no libraries, no build step). Press <span class="kbd">P</span> anywhere… actually just use the Print button in the top bar.</p>
+  </div>
+</footer>
+
+<div class="lb" id="lb" onclick="this.classList.remove('on')"><img id="lbimg" alt=""></div>
+
+<script>
+/* ---------- region data for the axial diagram ---------- */
+const INFO = {
+  pps:["Parapharyngeal space (PPS)","Paired fat-filled inverted pyramid: base on the skull base, apex on the greater cornu of the hyoid. Medially it is the <b>superior constrictor + buccopharyngeal fascia</b>, laterally the <b>medial pterygoid, mandibular ramus and deep lobe of parotid</b>. Contains fat, areolar tissue, lymph nodes, the internal maxillary artery and branches of V3 anteriorly; its carotid contents lie behind the styloid. On CT, <b>loss of the bright fat triangle</b> is the first clue to spread."],
+  rps:["Retropharyngeal space","Crescent of loose connective tissue immediately behind the pharyngeal wall, between <b>buccopharyngeal</b> (anterior) and <b>alar</b> (posterior) fascia. Skull base → <b>T1–T2</b>. Holds the <b>nodes of Rouvière</b> at C1–C3, the source of paediatric retropharyngeal abscess, and a midline raphe that in young children keeps collections paramedian."],
+  danger:["Danger space","Between the <b>alar</b> and <b>prevertebral</b> fascia. A thin, avascular, midline plane from skull base to <b>diaphragm</b> — the fastest route to descending necrotizing mediastinitis. No lymph nodes, no septa, nothing to stop pus."],
+  bucco:["Buccopharyngeal fascia","Thin membrane on the outer surface of the pharyngeal constrictors; part of the middle layer of the deep cervical fascia (perivisceral). It is the anterior wall of both the RPS and the medial PPS, and is the surgical plane entered during a pharyngotomy."],
+  alar:["Alar fascia","Delicate split from the prevertebral layer. Runs from the <b>clivus/petrous apex</b> down to blend with the buccopharyngeal fascia at <b>T1–T2</b> — that fusion is exactly what limits a retropharyngeal abscess to the upper mediastinum, and exactly what, if breached, opens the danger space."],
+  prevertebral:["Prevertebral fascia","Invests longus colli and the vertebral bodies, skull base to the sacrum. Behind it lies the true prevertebral space (TB/Pott abscess, psoas tracking). It forms the posterior wall of the danger space and the sheath of the carotid vessels laterally."],
+  investing:["Investing layer","Encircles the neck: splits to enclose SCM and the parotid, and forms the roof of the posterior triangle. It is why a PPS abscess presents as a firm swelling at the angle of the mandible — the “collar-stick” abscess."],
+  airway:["Oropharyngeal airway","The medial landmark for everything on this slice. A PPS lesion displaces the tonsillar fossa medially; a retropharyngeal collection pushes the whole posterior wall (and the airway) anteriorly."],
+  mpterygoid:["Medial pterygoid muscle","Forms the anterior/lateral boundary of the PPS with the mandibular ramus. Irritation or infiltration here produces <b>trismus</b> — the clinical sign that the process has reached the masticator compartment."],
+  parotid:["Parotid gland (deep lobe)","Wraps around the posterior belly of digastric; the deep (medial) lobe projects into the PPS through the stylomandibular tunnel. <b>Pleomorphic adenoma of the deep lobe is the commonest PPS tumour</b> and produces the classic ‘dumbbell’ shape with both an oral and a cervical component."],
+  scm:["Sternocleidomastoid","Lateral posterolateral wall of the neck; the anterior border of the posterior triangle. Its sheath is the usual skin-incision landmark for transcervical drainage of a PPS collection."],
+  mandible:["Mandibular ramus","Palpable landmark; the stylomandibular ligament runs from the styloid to its angular spine, marking the pre-/post-styloid division. Large or skull-base tumours may need a mandibulotomy for access."],
+  carotid:["Internal carotid artery","In the <b>post-styloid</b> compartment, classically displaced <b>anteromedially</b> by a poststyloid tumour (e.g. vagal schwannoma splays ICA from IJV). A pulsatile medial pharyngeal bulge = aneurysm/pseudoaneurysm until proven otherwise — image, never incise."],
+  ijv:["Internal jugular vein","Posterolateral to the ICA within the carotid sheath. Thrombus with fever after a sore throat is <b>Lemierre syndrome</b>; the thrombosed IJV also explains neck pain along the SCM with a normal-looking mouth."],
+  nerves:["Lower cranial nerves &amp; sympathetic chain","CN IX, X, XI, XII and the cervical sympathetic chain run in the post-styloid compartment. Masses here cause dysphagia, hoarseness, shoulder weakness, tongue wasting and Horner syndrome — and often <b>no</b> trismus. The auriculotemporal and inferior alveolar branches of V3 are on the <em>other</em> (prestyloid) side."],
+  eustachian:["Eustachian tube / torus tubarius","Enters the nasopharynx at the superior margin of the PPS. A mass in the upper space obstructs it, giving unilateral aural fullness or serous otitis with a normal-looking ear drum — a red flag for nasopharyngeal and PPS pathology in an adult."],
+  vertebra:["Vertebral body &amp; cord","Posterior limit of the dissection. Prevertebral/alar plane infection can erode bone (osteomyelitis, epidural abscess) — new neck pain with neurological signs changes the operation."],
+  longus:["Longus colli","Paired prevertebral flexors. They are the muscle you split or retract for an anterior cervical approach, and the plane along which a retropharyngeal/danger-space collection descends into the chest."],
+  prestyloid:["Pre-styloid compartment","Between the pharyngeal wall and the styloid line: fat, parotid deep lobe, internal maxillary artery, V3 branches. Pathology is mostly <b>salivary tumours and odontogenic infection</b>; expect medial tonsillar bulge and possible trismus."],
+  poststyloid:["Post-styloid (carotid) compartment","Behind the styloid line: ICA, IJV, CN IX–XII, sympathetic chain, deep cervical nodes. Pathology is <b>neurogenic, paraganglioma, vascular, nodal</b>. Expect cranial neuropathy without trismus. Measure metanephrines before operating on a vascular-looking lesion."]
+};
+const svg = document.getElementById('axsvg');
+function setInfo(k){
+  const d = INFO[k]; if(!d) return;
+  document.getElementById('axTitle').textContent = d[0];
+  document.getElementById('axBody').innerHTML = d[1];
+  document.getElementById('axialInfo').animate([{opacity:.2},{opacity:1}],{duration:280});
+}
+svg.querySelectorAll('.reg').forEach(g=>{
+  g.setAttribute('tabindex','0');
+  g.addEventListener('click',()=>setInfo(g.dataset.key));
+  g.addEventListener('mouseenter',()=>setInfo(g.dataset.key));
+  g.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();setInfo(g.dataset.key);}});
+});
+function toggleLayer(btn){
+  const on = btn.classList.toggle('on');
+  const g = svg.querySelector('[data-g="'+btn.dataset.layer+'"]');
+  if(g) g.classList.toggle('off', !on);
+}
+function flipStyloid(btn){
+  const g=document.getElementById('styloidG');
+  const on = g.classList.toggle('on');
+  btn.classList.toggle('on', on);
+  btn.textContent = on ? 'Hide styloid partition' : 'Show styloid partition';
+  if(on) setInfo('prestyloid');
+}
+
+/* ---------- coronal mini-diagram vertebrae (decorative) ---------- */
+(function(){
+  const g=document.getElementById('vts'); if(!g) return;
+  let s='';
+  for(let i=0;i<6;i++){ s+=`<rect x="392" y="${70+i*34}" width="76" height="26" rx="6" fill="#efe6cf" opacity="${0.35+0.1*i}"/>`; }
+  g.innerHTML=s;
+})();
+
+/* ---------- extent chart ---------- */
+const LEVELS = [
+  ["Skull base",0],["C1–C2",9],["C3 · hyoid",22],["C6 · cricoid",29],["T1–T2 · inlet",36],["Aortic arch",58],["T6–T8",74],["Diaphragm",100]
+];
+const SPACES = {
+  t1:[ {c:"var(--rps)",top:0,end:36,label:"retropharyngeal space — ends at T1–T2",
+        t:"Retropharyngeal space",b:"From the skull base down to <b>T1–T2</b>, where the alar fascia fuses with the buccopharyngeal fascia. Contains the nodes of Rouvière and a midline raphe. A contained abscess here stays in the upper mediastinum — until the alar fascia gives way."},
+       {c:"#5b6f78",top:36,end:100,label:"subfascial continuation (areolar only)",dash:true} ],
+  t2:[ {c:"var(--danger)",top:0,end:100,label:"danger space — skull base to diaphragm",
+        t:"Danger space",b:"Between the <b>alar</b> and <b>prevertebral</b> fascia, from skull base all the way to the <b>diaphragm</b>: loose, avascular, midline, no septa, no lymphatics — nothing to slow pus. The classic route to descending necrotizing mediastinitis."} ],
+  t3:[ {c:"var(--ppsp)",top:0,end:22,label:"parapharyngeal space — base → hyoid apex",
+        t:"Parapharyngeal space",b:"An <b>inverted pyramid</b>: base on the skull base, apex at the greater cornu of the <b>hyoid</b>. Short vertically, but it is a crossroads — communicating upward with the infratemporal fossa, orbit and middle fossa, laterally with the parotid and masticator space, downward with the submandibular space and carotid sheath."},
+       {c:"#2c5c5f",top:22,end:36,label:"→ submandibular / masticator",dash:true} ],
+  t4:[ {c:"var(--pv)",top:0,end:100,label:"carotid sheath — skull base → posterior mediastinum",
+        t:"Carotid sheath",b:"Runs the whole length of the neck into the thorax alongside the great vessels. It is the second highway for infection after the danger space and the compartment that a post-styloid PPS tumour displaces, splays or encases."},
+       {c:"#a98bff",top:0,end:100,label:"prevertebral space → sacrum",dash:true,off:true} ]
+};
+(function drawExtent(){
+  const sc=document.getElementById('scale');
+  sc.innerHTML = LEVELS.map(([n,p])=>`<div style="top:${p}%">${n}</div>`).join('');
+  Object.keys(SPACES).forEach(id=>{
+    const tr=document.getElementById(id);
+    SPACES[id].forEach(s=>{
+      const d=document.createElement('div');
+      d.className='bar';
+      d.style.top=s.top+'%';
+      d.style.height=(s.end-s.top)+'%';
+      d.style.background=s.c;
+      if(s.dash){d.style.borderStyle='dashed'; d.style.opacity='.55';}
+      if(s.label) d.dataset.t=s.label; else d.style.opacity='.28';
+      if(s.t){
+        d.addEventListener('click',()=>{
+          document.getElementById('xT').textContent=s.t;
+          document.getElementById('xB').innerHTML=s.b;
+          tr.parentElement.querySelectorAll('.bar').forEach(b=>b.classList.remove('sel'));
+          d.classList.add('sel');
+        });
+      } else { d.classList.add('dim'); d.style.pointerEvents='none'; }
+      tr.appendChild(d);
+    });
+  });
+})();
+/* animate bars into view */
+const io = new IntersectionObserver(es=>{
+  es.forEach(e=>{ if(e.isIntersecting){ e.target.querySelectorAll('.bar').forEach((b,i)=>setTimeout(()=>b.classList.add('go'), i*110)); io.unobserve(e.target);} });
+},{threshold:.25});
+io.observe(document.getElementById('extent'));
+
+/* ---------- tabs ---------- */
+function showTab(btn, group){
+  const sec = btn.closest('section');
+  sec.querySelectorAll('.tabp').forEach(p=>p.classList.remove('on'));
+  sec.querySelectorAll('.tabs .btn').forEach(b=>b.classList.remove('on'));
+  document.getElementById(btn.dataset.tab).classList.add('on');
+  btn.classList.add('on');
+}
+
+/* ---------- lightbox ---------- */
+document.querySelectorAll('.gal a').forEach(a=>{
+  a.addEventListener('click',e=>{e.preventDefault(); const lb=document.getElementById('lb'); document.getElementById('lbimg').src=a.href; lb.classList.add('on');});
+});
+document.querySelectorAll('.fig img').forEach(im=>{
+  im.addEventListener('click',()=>{const lb=document.getElementById('lb'); document.getElementById('lbimg').src=im.src; lb.classList.add('on');});
+});
+
+/* ---------- lateral neck xr schematic ---------- */
+(function xr(){
+  const g=document.getElementById('xr'), l=document.getElementById('xrlabels');
+  const names=["C1","C2","C3","C4","C5","C6","C7"];
+  let s='', lt='';
+  names.forEach((n,i)=>{
+    const y=52+i*44;
+    const x=300+Math.round(Math.sin(i/6*Math.PI)*-14)+ (i>4?18:0);
+    const w=72+ (i*3);
+    s+=`<rect x="${x}" y="${y}" width="${w}" height="32" rx="5" fill="#e9e2cf" opacity=".92"/>`;
+    s+=`<rect x="${x-30}" y="${y+8}" width="22" height="16" rx="4" fill="#d8d0bd" opacity=".7"/>`;
+    lt+=`<text x="${x+w+14}" y="${y+21}" class="lbl">${n}</text>`;
+    if(i>0){ lt+=`<text x="${x+w+14}" y="${y+21}" class="lbl" style="opacity:0">${n}</text>`; }
+  });
+  s+=`<rect x="372" y="364" width="94" height="30" rx="6" fill="#efe6cf" opacity=".9"/>`;
+  lt+=`<text x="386" y="352" class="lbl">T1</text>`;
+  /* airway column */
+  s+=`<path d="M286 44 C286 150 308 214 342 272 L360 300 L236 300 L232 240 C232 150 240 90 246 44Z" fill="#0a1013" opacity=".55"/>`;
+  g.innerHTML=s; l.innerHTML=lt;
+})();
+
+/* ---------- quiz ---------- */
+const Q=[
+ {q:"The retropharyngeal space lies between which two fascial layers?",o:["Buccopharyngeal and alar fascia","Alar and prevertebral fascia","Pretracheal and buccopharyngeal fascia","Investing and prevertebral fascia"],a:0,e:"Buccopharyngeal anteriorly, alar posteriorly. Alar-to-prevertebral is the danger space (and prevertebral-to-bone is the prevertebral space)."},
+ {q:"Why does a retropharyngeal abscess usually stop around T1–T2?",o:["The thoracic inlet blocks it","The alar fascia fuses with the buccopharyngeal fascia there","The nodes of Rouvière end at T2","The prevertebral fascia is thicker below C6"],a:1,e:"That fusion creates a closed sack. Breach the alar fascia and the collection enters the danger space, which continues to the diaphragm."},
+ {q:"Which structure is the classic content of the retropharyngeal space in a 2-year-old?",o:["Internal maxillary artery","Deep lobe of the parotid","Retropharyngeal (Rouvière) lymph nodes","Cervical sympathetic chain"],a:2,e:"Paired lateral nodes at C1–C3 drain the nasopharynx, adenoids, tonsil and middle ear; their suppuration is the origin of paediatric RPA. They atrophy by ~4–5 years."},
+ {q:"On a lateral neck film, prevertebral soft tissue at C2 in a child is considered abnormally thick above roughly:",o:["3 mm","7 mm","14 mm","20 mm"],a:1,e:"≈7 mm at C2 (or more than half the AP diameter of the same vertebral body) and ≈14 mm at C6 (up to the full body width). Technique-dependent — a normal film never excludes an abscess."},
+ {q:"The parapharyngeal space is best described as:",o:["A midline cleft behind the oesophagus","An inverted fat pyramid with its apex at the hyoid","A sleeve around the thyroid gland","A paired space between the investing and pretracheal fascia"],a:1,e:"Base on the skull base, apex at the greater cornu of the hyoid, filled with fat — hence its wedge of fat is the first thing to disappear on CT with inflammation."},
+ {q:"Which structure divides the parapharyngeal space into pre- and post-styloid compartments?",o:["Digastric posterior belly","Tensor-vascular-styloid (styloid diaphragm) fascia from the styloid to the mandibular angle","Pterygomandibular raphe","Stylomandibular ligament only"],a:1,e:"The styloid process with its muscular/fascial partition. Clinically the ligament is often quoted as the boundary line; the true partition is the fascia sheet off the styloid."},
+ {q:"The most common mass found in the parapharyngeal space is:",o:["Vagal paraganglioma","Schwannoma","Pleomorphic adenoma from the deep parotid lobe","Odontogenic abscess"],a:2,e:"Salivary neoplasm, usually a deep-lobe pleomorphic adenoma, accounts for roughly half of PPS tumours — classically a ‘dumbbell’ through the stylomandibular tunnel."},
+ {q:"A 45-year-old has a painless medial bulge of the left tonsillar fossa with normal mucosa, no trismus, mild hoarseness. Next step?",o:["Incision and drainage in clinic","Fine-needle biopsy through the mouth","Contrast CT/MRI of the PPS before any biopsy","Course of oral antibiotics and review in 6 weeks"],a:2,e:"Suspect a post-styloid neurogenic/paraganglioma tumour. Imaging first — an incised vascular paraganglioma in a confined space is a catastrophe. No transoral biopsy of PPS masses."},
+ {q:"Trismus with a bulging lateral pharyngeal wall most strongly suggests involvement of:",o:["The carotid sheath","The prestyloid/masticator compartment","The retropharyngeal space alone","The prevertebral space"],a:1,e:"Medial pterygoid irritation. An isolated RPS collection typically gives neck stiffness and pain on extension rather than true trismus."},
+ {q:"A retropharyngeal collection that breaches the alar fascia endangers the patient mainly because of:",o:["Rupture into the airway","Descending necrotizing mediastinitis via the danger space","Erosion of the thyroid cartilage","Cavernous sinus thrombosis"],a:1,e:"The alar–prevertebral plane runs to the diaphragm. Expect posterior mediastinitis, empyema, pericarditis — image the chest and drain early."},
+ {q:"Septic thrombophlebitis of the internal jugular vein after tonsillitis, with pulmonary emboli, in a teenager is:",o:["Lemierre syndrome","Vernet syndrome","Bezold abscess","Ludwig angina"],a:0,e:"Lemierre: usually <em>Fusobacterium necrophorum</em>. Bezold is a mastoid-tip abscess deep to SCM; Vernet is a IX–XII/jugular-foramen palsy; Ludwig is submandibular floor-of-mouth cellulitis."},
+ {q:"Which is NOT content of the post-styloid parapharyngeal compartment?",o:["Internal carotid artery","Hypoglossal nerve (XII)","Inferior alveolar nerve (V3)","Cervical sympathetic chain"],a:2,e:"Inferior alveolar (and auriculotemporal) nerves are V3 branches in the <b>pre-styloid</b> compartment, together with the internal maxillary artery and parotid deep lobe."}
+];
+let answered=0, correct=0;
+(function buildQuiz(){
+  const box=document.getElementById('quizBox');
+  box.innerHTML = Q.map((x,i)=>`
+   <div class="q" id="q${i}">
+     <div class="qt">${i+1}. ${x.q}</div>
+     <div class="opts">${x.o.map((o,j)=>`<button class="o" data-q="${i}" data-o="${j}">${String.fromCharCode(65+j)}. ${o}</button>`).join('')}</div>
+     <div class="fb"></div>
+   </div>`).join('') +
+   `<div class="card flat" style="margin-top:1rem"><b id="verdict"></b> <span class="small">Answers with explanations appear under each question. Score bar is fixed at the top.</span></div>`;
+  box.querySelectorAll('button.o').forEach(b=>{
+    b.addEventListener('click',()=>{
+      const qi=+b.dataset.q, q=document.getElementById('q'+qi);
+      if(q.classList.contains('done')) return;
+      q.classList.add('done'); answered++;
+      const ok = Q[qi].a === +b.dataset.o;
+      if(ok){correct++; b.classList.add('correct');}
+      else {b.classList.add('wrong'); q.querySelectorAll('.o')[Q[qi].a].classList.add('correct');}
+      q.querySelector('.fb').innerHTML = (ok?'<b>Correct.</b> ':'<b>Not quite.</b> ')+Q[qi].e;
+      document.getElementById('scoreTxt').textContent = correct+' / '+Q.length+' correct';
+      document.getElementById('scoreBar').style.width = (correct/Q.length*100)+'%';
+      if(answered===Q.length) document.getElementById('verdict').textContent =
+        correct>=11 ? 'Excellent — you can now survive a neck-space viva.' :
+        correct>=8 ? 'Solid. Re-read the extent chart and the pre-/post-styloid split.' :
+        'Go back to sections 01–03, then redraw both diagrams from memory.';
+    });
+  });
+})();
+function resetQuiz(){
+  answered=0;correct=0;
+  document.getElementById('scoreTxt').textContent='0 / 12 correct';
+  document.getElementById('scoreBar').style.width='0%';
+  document.getElementById('verdict').textContent='';
+  document.querySelectorAll('.q').forEach(q=>{q.classList.remove('done'); q.querySelectorAll('.o').forEach(o=>o.classList.remove('correct','wrong')); q.querySelector('.fb').innerHTML='';});
+}
+</script>
+<style>
+.hero-grid{grid-template-columns:minmax(0,1.5fr) minmax(280px,1fr); gap:1.6rem; align-items:end}
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr}}
+</style>
+</body>
+</html>
